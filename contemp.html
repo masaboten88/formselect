@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <form id="formthing" method="POST">
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="name" placeholder="Enter your name">
+          <i class='fas fa-user'></i>
+        </div>
+        <div class="field">
+           <Select type="text" required id="email" name="email
+                " placeholder="Select destination of message">
+                    <option name="sou" value="Sharma Saurabh">Sharma Saurabh</option>
+                    <option name="irie" value="irie">入江 真翔</option>
+                    <option name="tominaga" value="masa">冨永 聖翔</option>
+          </Select>
+          <i class='fas fa-envelope'></i>
+        </div>
+      </div>
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="phone" placeholder="Enter your phone">
+          <i class='fas fa-phone-alt'></i>
+        </div>
+        <div class="field">
+          <input type="text" name="website" placeholder="Enter your website">
+          <i class='fas fa-globe'></i>
+        </div>
+      </div>
+      <div class="message">
+        <textarea placeholder="Write your message" name="message"></textarea>
+        <i class="material-icons">message</i>
+      </div>
+      <div class="button-area">
+        <button type="submit" onclick="clickBtn2()">Send Message</button>
+        <span></span>
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    var formlink = ["https://formspree.io/f/mknygepr", "https://formspree.io/f/moqypgnj", ""]
+
+    function clickBtn2(){
+      var email = document.getElementById("email").value;
+      console.log(email)
+      if(email == "Sharma Saurabh" ){
+        document.getElementById("formthing").setAttribute("action", formlink[1]);
+      } else if(email == "masa"){
+        document.getElementById("formthing").setAttribute("action", formlink[0]);
+      } else if(email == "irie"){
+        document.getElementById("formthing").setAttribute("action", formlink[2]);
+      }
+    }
+
+
+  </script>
+
+  <script src="contemp.js"></script>
+
+</body>
+</html>
